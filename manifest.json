@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Crypto Watch",
+    "description": "This extension shows a Google Image search result for the current page",
+    "version": "1.0",
+  
+    "browser_action": {
+      "default_icon": "Ethereum-logo.png",
+      "default_popup": "homepage.html"
+    },
+    "permissions": [
+      "activeTab",
+      "https://ajax.googleapis.com/",
+      "https://min-api.cryptocompare.com/"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*", 
+                "https://*/*"
+              ],
+            "js": ["homepage.js"]
+        }
+    ]
+}
