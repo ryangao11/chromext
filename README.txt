@@ -1,3 +1,5 @@
-use highstock for graph
-https://www.cryptocompare.com/api/#-api-data-coinlist- for prices (query using request? - github directory)
-use angular for client side
+A quick extension that gives the current price of ethereum.
+TODO
+  Front-end customization
+  Search query to allow for customized searches
+  More advanced data, such as percent change over time and highs/lows
