@@ -9,15 +9,30 @@
         <script src="/popper.js-1.12.3/dist/umd/popper.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
 </head>
-<body ng-controller="homepageController" ng-csp style="width:357px; height:500px; background-color:floralwhite">
-        <div class="container-fluid">
-                <h3 align="center">Cryptocurrency Price Tracker</h3>
-                <p></p> 
+<body ng-controller="homepageController" ng-csp style="width:357px; height:200px; background-color:floralwhite">
+    <div class="container">
+        <h3 align="center">Cryptocurrency Price Tracker</h3>
+        <p></p> 
+        <div class="row">
+            <div class="col-md-6">
+            <div>Ethereum Price: ${{price}}</div>
+            <button ng-if="showRefresh" type="button" class="btn btn-sm" ng-click="getPriceInfo('USD')">
+                Refresh
+            </button>
         </div>
-    <div class=>Ethereum Price: ${{price}}</div>
-    <button ng-if="showRefresh" type="button" class="col-xs-12 btn btn-default" ng-click="getPriceInfo('USD')">
-        Refresh
-    </button>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control input-med" id ="searchText" placeholder="What would you like to search?" />
+                    <button class="btn btn-info btn-sm" type="button">
+                        <i class="glyphicon glphyicon-search">Search</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

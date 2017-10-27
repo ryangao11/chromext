@@ -1,16 +1,14 @@
 var app = angular.module('myApp', []);
 
 app.controller('homepageController', function($scope, $timeout) {
-    $scope.getPriceInfo = function(currency) {
-        console.log("getting info")
+    $scope.getPriceInfo = function(currencyFrom, currencyTo) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR");
         //https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=BTC,USD,EUR
         xhr.onload = function () {
             var result = JSON.parse(xhr.response);
-            $scope.price = result[currency];
+            $scope.price = result[currencyTo];
             $scope.showRefresh = false;
-            console.log('refresh?', $scope.showRefresh)
             $timeout(function() {
                 $scope.showRefresh = true;
              }, 3000);
@@ -21,9 +19,11 @@ app.controller('homepageController', function($scope, $timeout) {
             console.error(xhr.statusText);
           };
         xhr.send();
-        //return result[currency];
       }
-    $scope.getPriceInfo('USD');
+      $scope.searchFunc = function() {
+        console.log("made");
+      }
+    $scope.getPriceInfo('ETH', 'USD');
     //$scope.getPriceInfo('USD');
     //$scope.price = 4;
 });
