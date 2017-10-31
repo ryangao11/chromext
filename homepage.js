@@ -9,7 +9,7 @@ app.controller('homepageController', function($scope, $timeout) {
         xhr.onload = function () {
             var result = JSON.parse(xhr.response);
             $scope.price = result[currencyTo];
-            //setTwoNumberDecimal();
+            setTwoNumberDecimal();
             $scope.showRefresh = false;
             $timeout(function() {
                 $scope.showRefresh = true;
@@ -30,9 +30,9 @@ app.controller('homepageController', function($scope, $timeout) {
         $scope.getPriceInfo($scope.currentCurrency, 'USD');
         $scope.searchText = '';
     }
-      /*function setTwoNumberDecimal() {
+    function setTwoNumberDecimal() {
         $scope.price = parseFloat($scope.price).toFixed(2);
-        }*/
+    }
     $scope.getPriceInfo($scope.currentCurrency, 'USD');
     //$scope.getPriceInfo('USD');
     //$scope.price = 4;
