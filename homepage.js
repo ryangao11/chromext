@@ -1,7 +1,7 @@
 var app = angular.module('myApp', []);
 
 app.controller('homepageController', function($scope, $timeout) {
-    $scope.currentCurrency = 'ETH';
+
     $scope.getPriceInfo = function(currencyFrom, currencyTo) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://min-api.cryptocompare.com/data/price?fsym=" + currencyFrom + "&tsyms=BTC,USD,EUR");
@@ -22,17 +22,22 @@ app.controller('homepageController', function($scope, $timeout) {
         };
         xhr.send();
     }
+
     $scope.searchFunc = function() {
         console.log("made");
     }
+
     $scope.changeCurrency = function() {
         $scope.currentCurrency = $scope.searchText.toUpperCase();
         $scope.getPriceInfo($scope.currentCurrency, 'USD');
         $scope.searchText = '';
     }
+
     function setTwoNumberDecimal() {
         $scope.price = parseFloat($scope.price).toFixed(2);
     }
+    
+    $scope.currentCurrency = 'ETH';
     $scope.getPriceInfo($scope.currentCurrency, 'USD');
     //$scope.getPriceInfo('USD');
     //$scope.price = 4;
