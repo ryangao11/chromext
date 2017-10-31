@@ -14,21 +14,23 @@
         <h3 align="center">Cryptocurrency Price Tracker</h3>
         <p></p> 
         <div class="row">
-            <div class="col-md-6">
-            <div>Ethereum Price: ${{price}}</div>
-            <button ng-if="showRefresh" type="button" class="btn btn-sm" ng-click="getPriceInfo('USD')">
-                Refresh
-            </button>
-        </div>
+            <div class="col-md-8">
+                <div>{{currentCurrency}} Price: ${{price}}</div>
+            </div>
         </div>
         <p></p>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="input-group">
-                    <input type="text" class="form-control input-med" id ="searchText" placeholder="What would you like to search?" />
-                    <button class="btn btn-info btn-sm" type="button">
-                        <i class="glyphicon glphyicon-search">Search</i>
-                    </button>
+                    <input type="text" class="form-control input-sm" ng-model="searchText" placeholder="What price would you like to know?" />
+                    <div class="btn-group">
+                        <button class="btn btn-info btn-sm" type="button" ng-click="changeCurrency()">
+                            <i class="glyphicon glphyicon-search">Search</i>
+                        </button>
+                        <button ng-if="showRefresh" type="button" class="btn btn-info btn-sm" ng-click="getPriceInfo(currentCurrency, 'USD')">
+                            <i class="glyphicon glphyicon-search">Refresh</i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
