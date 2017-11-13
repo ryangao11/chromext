@@ -4,11 +4,7 @@ This is a chrome extension which uses the API from CryptoCompare to get the curr
 of any cryptocurrency (defaults to Ethereum). Currently only supports price lookup for 
 abbreviations (ex. ETH, BTC, etc).
 
-## Getting Started
-
-
-
-## Deployment
+## Getting Started & Deployment
 
 Click the menu icon on the right side of your chrome browser, then go to More Tools -> 
 Extensions. Click on “Load unpacked extension…” and navigate to this directory and click
@@ -16,14 +12,14 @@ select.
 
 ## TODO
 
-Implement a more extensive search function
-Show % price change over a specified period of time
-Support different price conversions, other than USD
+* Implement a more extensive search function
+* Show % price change over a specified period of time
+* Support different price conversions, other than USD
 
 ## Built With
 
-Angular.js
-Bootstrap v4
+* Angular.js
+* Bootstrap v4
 
 ## Author
 

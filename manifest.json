@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
   
-    "name": "Crypto Watch",
-    "description": "This extension shows a Google Image search result for the current page",
+    "name": "Crypto Price Tracker",
+    "description": "This extension shows the price of a given cryptocurrency in USD",
     "version": "1.0",
   
     "browser_action": {
-      "default_icon": "Ethereum-logo.png",
+      "default_icon": "Ethereum-logo-fullsize.png",
       "default_popup": "homepage.html"
     },
     "permissions": [
