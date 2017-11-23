@@ -18,6 +18,8 @@ select.
 
 ## Built With
 
+* HTML
+* Javascript
 * Angular.js
 * Bootstrap v4
 
