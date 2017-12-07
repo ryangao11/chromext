@@ -9,7 +9,7 @@
         <script src="/popper.js-1.12.3/dist/umd/popper.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
 </head>
-<body ng-controller="homepageController" ng-csp style="width:357px; height:200px; background-color:floralwhite">
+<body ng-controller="homepageController" ng-csp style="width:357px; height:220px; background-color:floralwhite">
     <div class="container">
         <h3 align="center">Cryptocurrency Price Tracker</h3>
         <p></p> 
@@ -23,12 +23,18 @@
             <div class="col-md-8">
                 <div class="input-group">
                     <input type="text" class="form-control input-sm" ng-model="searchText" placeholder="BTC, ETH, LTC, etc..." />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="input-group">
                     <div class="btn-group">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="changeCurrency()">
-                            <i class="glyphicon glphyicon-search">Search</i>
+                        <button class="btn btn-info btn-md" type="button" ng-click="changeCurrency()" style="margin-right: 5px; margin-top: 10px">
+                            <i>Search</i>
                         </button>
-                        <button ng-if="showRefresh" type="button" class="btn btn-info btn-sm" ng-click="getPriceInfo(currentCurrency, 'USD')">
-                            <i class="glyphicon glphyicon-search">Refresh</i>
+                        <button ng-if="showRefresh" type="button" class="btn btn-info btn-md" ng-click="getPriceInfo(currentCurrency, 'USD')" style="margin-top: 10px">
+                            <i>Refresh</i>
                         </button>
                     </div>
                 </div>
